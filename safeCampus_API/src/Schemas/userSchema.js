@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const User = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
 correo: {
   nombre: {
     type: String,
@@ -20,7 +20,16 @@ correo: {
   correo: {
     type: String,
     required: true,
-    // Regex con el atributo match
+    match: [/.+\@.+\..+/, 'Please fill a valid email address']
+  },
+  roles: {
+      type: [{
+          type: String,
+          enum: ['user', 'temporal']
+      }],
+      default: ['user']
   }
 }
 });
+
+module.exports = mongoose.model('User', userSchema)
