@@ -1,43 +1,115 @@
 import 'package:safecampus/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:safecampus/screens/aboutUs.dart';
+import 'package:safecampus/screens/pedirAyuda.dart';
 
 class Hamburguesita extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('SafeCampus')),
-      body: Center(child: Text('aquí va el home')),
-      drawer: Drawer(
+    final drawerHeader = UserAccountsDrawerHeader(
+      decoration: BoxDecoration(
+          color: kTitulos
+      ),
+      accountName: Text(
+        'Juanita',
+        style: GoogleFonts.montserrat(
+          color: kContraste1,
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+      accountEmail: Text(
+        'juanita@gmail.com',
+        style: GoogleFonts.montserrat(
+          color: kContraste1,
+          fontWeight: FontWeight.w300,
+        ),
+      ),
+      currentAccountPicture: CircleAvatar(
+        child: FlutterLogo(size: 50.0),
+        backgroundColor: kPrimaryColor,
+      ),
+    );
+    return Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Menu'),
-              decoration: BoxDecoration(
-                color: kContraste2,
+            Container(
+              padding: null,
+              child: drawerHeader
+            ),
+            ListTile(
+              title: Text(
+                'Sobre nosotros',
+                style: GoogleFonts.montserrat(
+                  color: kContraste2,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ),
-            ListTile(
-              title: Text('Quiero ayuda'),
               onTap: (){
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return aboutUs();
+                        }
+                    )
+                );
               },
             ),
             ListTile(
-              title: Text('Quiero ayudar'),
+              title: Text(
+                'Quiero ayuda',
+                style: GoogleFonts.montserrat(
+                color: kContraste2,
+                fontWeight: FontWeight.w500,
+                ),
+              ),
               onTap: (){
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return pedirAyuda();
+                        }
+                    )
+                );
               },
             ),
             ListTile(
-              title: Text('Botón de emergencia'),
+              title: Text(
+                'Quiero ayudar',
+                style: GoogleFonts.montserrat(
+                color: kContraste2,
+                fontWeight: FontWeight.w500,
+              ),
+              ),
+              onTap: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context){
+                          return aboutUs();
+                        }
+                    )
+                );
+              },
+            ),
+            ListTile(
+              trailing: Icon(Icons.report_problem, color: Colors.redAccent,),
+              title: Text(
+                'EMERGENCIA',
+                style: GoogleFonts.montserrat(
+                color: Colors.redAccent,
+                fontWeight: FontWeight.w500,
+              ),
+              ),
               onTap: (){
                 Navigator.pop(context);
               },
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
