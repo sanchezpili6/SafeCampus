@@ -5,6 +5,7 @@ import 'package:safecampus/screens/aboutUs.dart';
 import 'package:safecampus/screens/pedirAyuda.dart';
 import 'package:safecampus/screens/provideHelp.dart';
 import 'package:safecampus/screens/emergencia.dart';
+import 'package:safecampus/screens/chatScreen.dart';
 
 class Hamburguesita extends StatelessWidget {
   @override
@@ -99,6 +100,26 @@ class Hamburguesita extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context){
                             return ProvideHelp();
+                          }
+                      )
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Chat',
+                  style: GoogleFonts.montserrat(
+                      color: kContraste2,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20
+                  ),
+                ),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return ChatScreen();
                           }
                       )
                   );
