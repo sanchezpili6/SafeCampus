@@ -19,9 +19,17 @@ exports.postUser = async ({body}, res)  => {
   }
 }
 
+exports.getUsers = async ({body}, res) => {
+
+}
 exports.getUser = async ({body}, res) => {
 
+}
+exports.updateUser = async ({body}, res) => {
 
+}
+exports.deleteUsers = async ({body}, res) => {
+  
 }
 
 

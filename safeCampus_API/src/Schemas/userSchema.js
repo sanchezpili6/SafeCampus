@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-correo: {
   nombre: {
     type: String,
     required: true,
     min: 4
   },
-  escuela: {
-    type: String,
+  escuelaID: {
+    type: ObjectID,
     required: true,
-    min: 10
+    ref: 'School'
   },
   campus: {
     type: String,
@@ -29,7 +28,6 @@ correo: {
       }],
       default: ['user']
   }
-}
 });
 
 module.exports = mongoose.model('User', userSchema)

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const userSchema = require('./userSchema');
 
 const chatSchema = new mongoose.Schema({
 correo: {
@@ -12,21 +13,22 @@ correo: {
         required: true,
       },
       rol: {
-      //user schema type
+      type: mongoose.Schema.Types.ObjectId,
+      ref: userSchema
       }
     }],
   inicio: {
-    
-  },
-  chatID: {
-    
+     type: Date, 
+     default: Date.now 
   },
   solicitaID: {
-  
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: userSchema
   },
   apoyaID: {
-     
-  }
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: userSchema
+    }
 }
 });
 
