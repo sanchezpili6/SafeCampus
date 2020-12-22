@@ -3,23 +3,6 @@ import 'package:safecampus/constants/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:safecampus/screens/aboutUs.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          child: LoginPage(),
-        ),
-      ),
-    );
-  }
-}
-
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -121,8 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                           style: GoogleFonts.montserrat(
                               color: _fontColor,
                               fontWeight: FontWeight.w500,
-                              fontSize: 20
-                          ),
+                              fontSize: 20),
                         ),
                       )
                     ],
@@ -186,12 +168,7 @@ class _LoginPageState extends State<LoginPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                _pageState = 0;
-              });
-            },
+          Container(
             child: AnimatedContainer(
               height: _registerHeight,
               padding: EdgeInsets.all(20),
@@ -259,43 +236,31 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Column(
                     children: <Widget>[
-                    RaisedButton(
-                    color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        padding: EdgeInsets.all(20),
-                        child: Text(
-                          'Registrarte',
-                          style: TextStyle(
-                            fontSize: 16,
+                      RaisedButton(
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
                           ),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder:
-                                      (context) {
-                                    return aboutUs();
-                                  }
-                              )
-                          );
-                          print('hola');
-                        }
-                    ),
+                          padding: EdgeInsets.all(20),
+                          child: Text(
+                            'Registrarte',
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return aboutUs();
+                            }));
+                          }),
                     ],
                   ),
                 ],
               ),
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                _pageState = 0;
-              });
-            },
+          Container(
             child: AnimatedContainer(
               height: _loginHeight,
               padding: EdgeInsets.all(32),
@@ -336,10 +301,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ]),
                   Column(
-                    children: <Widget>[PrimaryButton(
+                    children: <Widget>[
+                      PrimaryButton(
                         btnText: "Inicia Sesión",
                         targetPage: aboutUs(),
-                    )
+                      )
                     ],
                   ),
                 ],
@@ -354,7 +320,7 @@ class _LoginPageState extends State<LoginPage> {
 
 class PrimaryButton extends StatefulWidget {
   final String btnText;
-  final  targetPage;
+  final targetPage;
   PrimaryButton({this.btnText, this.targetPage});
 
   @override
@@ -365,56 +331,22 @@ class _PrimaryButtonState extends State<PrimaryButton> {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(50.0),
-      ),
-      padding: EdgeInsets.all(20),
-      child: Text(
-        widget.btnText,
-        style: TextStyle(
-          fontSize: 16,
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
         ),
-      ),
-      onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder:
-                    (context) {
-                  return widget.targetPage;
-                }
-            )
-        );
-        print('hola');
-      }
-    );
-    /*GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context){
-                  return widget.targetPage;
-                }
-            )
-        );
-        print('Sí jalo');
-      },
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(50)),
         padding: EdgeInsets.all(20),
-        child: Center(
-          child: Text(
-            widget.btnText,
-            style: TextStyle(
-              fontSize: 16,
-            ),
+        child: Text(
+          widget.btnText,
+          style: TextStyle(
+            fontSize: 16,
           ),
         ),
-      ),
-    );*/
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return widget.targetPage;
+          }));
+        });
   }
 }
 
