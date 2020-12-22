@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:safecampus/screens/aboutUs.dart';
 import 'package:safecampus/screens/pedirAyuda.dart';
+import 'package:safecampus/screens/provideHelp.dart';
 
-class Hamburguesita extends StatelessWidget{
+class Hamburguesita extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final drawerHeader = UserAccountsDrawerHeader(
-      decoration: BoxDecoration(
-          color: kTitulos
-      ),
+      decoration: BoxDecoration(color: kTitulos),
       accountName: Text(
         'Juanita',
         style: GoogleFonts.montserrat(
@@ -98,7 +97,7 @@ class Hamburguesita extends StatelessWidget{
                       context,
                       MaterialPageRoute(
                           builder: (context){
-                            return aboutUs();
+                            return provideHelp();
                           }
                       )
                   );

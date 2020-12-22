@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safecampus/login/firstPage.dart';
+import 'package:safecampus/screens/helperProfile.dart';
+import 'package:safecampus/screens/provideHelp.dart';
 import 'package:safecampus/screens/aboutUs.dart';
 
 
