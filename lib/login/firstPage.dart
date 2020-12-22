@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
     switch (_pageState) {
       case 0:
         _backgroundColor = Colors.white;
-        _buttonColor = Color(0xFFFF85A3);
+        _buttonColor = kContraste2;
         _buttonTextColor = Colors.white;
         _fontColor = Colors.black;
 
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
       case 1:
         _backgroundColor = Colors.white;
         _buttonColor = Colors.white;
-        _buttonTextColor = Color(0xFFFF85A3);
+        _buttonTextColor = kContraste2;
         _fontColor = Colors.black;
 
         _registerBlock = 150;
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
       case 2:
         _backgroundColor = Colors.white;
         _buttonColor = Colors.white;
-        _buttonTextColor = Color(0xFFFF85A3);
+        _buttonTextColor = kContraste2;
         _fontColor = Colors.black;
 
         _registerBlock = 3000;
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
               duration: Duration(milliseconds: 3000),
               transform: Matrix4.translationValues(0, _registerBlock, 1),
               decoration: BoxDecoration(
-                  color: Color(0xFFFF85A3),
+                  color: kContraste2,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25))),
@@ -267,7 +267,7 @@ class _LoginPageState extends State<LoginPage> {
               duration: Duration(milliseconds: 3000),
               transform: Matrix4.translationValues(0, _loginBlock, 1),
               decoration: BoxDecoration(
-                  color: Color(0xFFA1D9F7),
+                  color: kPrimaryColor,
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25))),
