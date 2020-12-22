@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safecampus/login/firstPage.dart';
+import 'package:safecampus/screens/aboutUs.dart';
 
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          child: LoginPage(),
+          child: aboutUs(),
         ),
       ),
     );

@@ -16,6 +16,7 @@ class Hamburguesita extends StatelessWidget{
         style: GoogleFonts.montserrat(
           color: kContraste1,
           fontWeight: FontWeight.w300,
+            fontSize: 15
         ),
       ),
       accountEmail: Text(
@@ -23,6 +24,7 @@ class Hamburguesita extends StatelessWidget{
         style: GoogleFonts.montserrat(
           color: kContraste1,
           fontWeight: FontWeight.w300,
+            fontSize: 15
         ),
       ),
       currentAccountPicture: CircleAvatar(
@@ -42,8 +44,9 @@ class Hamburguesita extends StatelessWidget{
               title: Text(
                 'Sobre nosotros',
                 style: GoogleFonts.montserrat(
-                  color: kContraste2,
-                  fontWeight: FontWeight.w500,
+                    color: kContraste2,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20
                 ),
               ),
               onTap: (){
@@ -61,8 +64,9 @@ class Hamburguesita extends StatelessWidget{
               title: Text(
                 'Quiero ayuda',
                 style: GoogleFonts.montserrat(
-                color: kContraste2,
-                fontWeight: FontWeight.w500,
+                  color: kContraste2,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20
                 ),
               ),
               onTap: (){
@@ -79,9 +83,10 @@ class Hamburguesita extends StatelessWidget{
             ListTile(
               title: Text(
                 'Quiero ayudar',
-                style: GoogleFonts.montserrat(
-                color: kContraste2,
-                fontWeight: FontWeight.w500,
+                  style: GoogleFonts.montserrat(
+                  color: kContraste2,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20
               ),
               ),
               onTap: (){
@@ -102,6 +107,7 @@ class Hamburguesita extends StatelessWidget{
                 style: GoogleFonts.montserrat(
                 color: Colors.redAccent,
                 fontWeight: FontWeight.w500,
+                    fontSize: 20
               ),
               ),
               onTap: (){
