@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:safecampus/constants/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:safecampus/screens/aboutUs.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,7 +106,11 @@ class _LoginPageState extends State<LoginPage> {
                       Container(
                         child: Text(
                           "SafeCampus",
-                          style: TextStyle(fontSize: 30, color: _fontColor),
+                          style: GoogleFonts.montserrat(
+                            color: _fontColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30,
+                          ),
                         ),
                       ),
                       Container(
@@ -112,7 +118,11 @@ class _LoginPageState extends State<LoginPage> {
                         child: Text(
                           "Encuentra la ayuda que necesitas en este momento",
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 20, color: _fontColor),
+                          style: GoogleFonts.montserrat(
+                              color: _fontColor,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 20
+                          ),
                         ),
                       )
                     ],
@@ -248,7 +258,33 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   Column(
-                    children: <Widget>[PrimaryButton(btnText: "Registrate")],
+                    children: <Widget>[
+                    RaisedButton(
+                    color: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
+                        padding: EdgeInsets.all(20),
+                        child: Text(
+                          'Registrarte',
+                          style: TextStyle(
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder:
+                                      (context) {
+                                    return aboutUs();
+                                  }
+                              )
+                          );
+                          print('hola');
+                        }
+                    ),
+                    ],
                   ),
                 ],
               ),
@@ -300,7 +336,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ]),
                   Column(
-                    children: <Widget>[PrimaryButton(btnText: "Inicia Sesión")],
+                    children: <Widget>[PrimaryButton(
+                        btnText: "Inicia Sesión",
+                        targetPage: aboutUs(),
+                    )
+                    ],
                   ),
                 ],
               ),
@@ -314,7 +354,8 @@ class _LoginPageState extends State<LoginPage> {
 
 class PrimaryButton extends StatefulWidget {
   final String btnText;
-  PrimaryButton({this.btnText});
+  final  targetPage;
+  PrimaryButton({this.btnText, this.targetPage});
 
   @override
   _PrimaryButtonState createState() => _PrimaryButtonState();
@@ -323,19 +364,57 @@ class PrimaryButton extends StatefulWidget {
 class _PrimaryButtonState extends State<PrimaryButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(50)),
+    return RaisedButton(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(50.0),
+      ),
       padding: EdgeInsets.all(20),
-      child: Center(
-        child: Text(
-          widget.btnText,
-          style: TextStyle(
-            fontSize: 16,
+      child: Text(
+        widget.btnText,
+        style: TextStyle(
+          fontSize: 16,
+        ),
+      ),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder:
+                    (context) {
+                  return widget.targetPage;
+                }
+            )
+        );
+        print('hola');
+      }
+    );
+    /*GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context){
+                  return widget.targetPage;
+                }
+            )
+        );
+        print('Sí jalo');
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(50)),
+        padding: EdgeInsets.all(20),
+        child: Center(
+          child: Text(
+            widget.btnText,
+            style: TextStyle(
+              fontSize: 16,
+            ),
           ),
         ),
       ),
-    );
+    );*/
   }
 }
 

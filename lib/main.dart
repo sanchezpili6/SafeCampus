@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:safecampus/screens/aboutUs.dart';
+import 'package:safecampus/login/firstPage.dart';
 
 
 void main() {
@@ -7,12 +7,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      home: aboutUs(),
+      home: Scaffold(
+        body: Container(
+          child: LoginPage(),
+        ),
+      ),
     );
   }
 }
