@@ -34,7 +34,7 @@ class Hamburguesita extends StatelessWidget {
     );
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: kContraste1
+
       ),
       child: Drawer(
           child: ListView(
