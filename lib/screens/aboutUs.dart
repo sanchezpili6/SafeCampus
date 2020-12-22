@@ -8,7 +8,6 @@ class aboutUs extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      backgroundColor: kContraste1,
       drawer: Hamburguesita(),
       appBar: AppBar(
           backgroundColor: kPrimaryColor,
