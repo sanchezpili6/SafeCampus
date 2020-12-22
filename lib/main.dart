@@ -4,7 +4,6 @@ import 'package:safecampus/screens/helperProfile.dart';
 import 'package:safecampus/screens/provideHelp.dart';
 import 'package:safecampus/screens/aboutUs.dart';
 
-
 void main() {
   runApp(MyApp());
 }
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          child: aboutUs(),
+          child: LoginPage(),
         ),
       ),
     );
