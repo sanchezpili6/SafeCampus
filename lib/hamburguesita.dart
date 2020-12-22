@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:safecampus/screens/aboutUs.dart';
 import 'package:safecampus/screens/pedirAyuda.dart';
 import 'package:safecampus/screens/provideHelp.dart';
+import 'package:safecampus/screens/emergencia.dart';
 
 class Hamburguesita extends StatelessWidget {
   @override
@@ -65,7 +66,7 @@ class Hamburguesita extends StatelessWidget {
               ),
               ListTile(
                 title: Text(
-                  'Quiero ayuda',
+                  'Pedir ayuda',
                   style: GoogleFonts.montserrat(
                     color: kContraste2,
                     fontWeight: FontWeight.w500,
@@ -97,7 +98,7 @@ class Hamburguesita extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context){
-                            return provideHelp();
+                            return ProvideHelp();
                           }
                       )
                   );
@@ -114,7 +115,14 @@ class Hamburguesita extends StatelessWidget {
                 ),
                 ),
                 onTap: (){
-                  Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return emergencia();
+                          }
+                      )
+                  );
                 },
               ),
             ],
