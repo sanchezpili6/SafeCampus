@@ -32,90 +32,95 @@ class Hamburguesita extends StatelessWidget{
         backgroundColor: kPrimaryColor,
       ),
     );
-    return Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            Container(
-              padding: null,
-              child: drawerHeader
-            ),
-            ListTile(
-              title: Text(
-                'Sobre nosotros',
-                style: GoogleFonts.montserrat(
+    return Theme(
+      data: Theme.of(context).copyWith(
+        canvasColor: kContraste1
+      ),
+      child: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              Container(
+                padding: null,
+                child: drawerHeader
+              ),
+              ListTile(
+                title: Text(
+                  'Sobre nosotros',
+                  style: GoogleFonts.montserrat(
+                      color: kContraste2,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20
+                  ),
+                ),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return aboutUs();
+                          }
+                      )
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Quiero ayuda',
+                  style: GoogleFonts.montserrat(
+                    color: kContraste2,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20
+                  ),
+                ),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return pedirAyuda();
+                          }
+                      )
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(
+                  'Quiero ayudar',
+                    style: GoogleFonts.montserrat(
                     color: kContraste2,
                     fontWeight: FontWeight.w500,
                     fontSize: 20
                 ),
-              ),
-              onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return aboutUs();
-                        }
-                    )
-                );
-              },
-            ),
-            ListTile(
-              title: Text(
-                'Quiero ayuda',
-                style: GoogleFonts.montserrat(
-                  color: kContraste2,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20
                 ),
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context){
+                            return aboutUs();
+                          }
+                      )
+                  );
+                },
               ),
-              onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return pedirAyuda();
-                        }
-                    )
-                );
-              },
-            ),
-            ListTile(
-              title: Text(
-                'Quiero ayudar',
+              ListTile(
+                trailing: Icon(Icons.report_problem, color: Colors.redAccent,),
+                title: Text(
+                  'EMERGENCIA',
                   style: GoogleFonts.montserrat(
-                  color: kContraste2,
+                  color: Colors.redAccent,
                   fontWeight: FontWeight.w500,
-                  fontSize: 20
+                      fontSize: 20
+                ),
+                ),
+                onTap: (){
+                  Navigator.pop(context);
+                },
               ),
-              ),
-              onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context){
-                          return aboutUs();
-                        }
-                    )
-                );
-              },
-            ),
-            ListTile(
-              trailing: Icon(Icons.report_problem, color: Colors.redAccent,),
-              title: Text(
-                'EMERGENCIA',
-                style: GoogleFonts.montserrat(
-                color: Colors.redAccent,
-                fontWeight: FontWeight.w500,
-                    fontSize: 20
-              ),
-              ),
-              onTap: (){
-                Navigator.pop(context);
-              },
-            ),
-          ],
+            ],
+          ),
         ),
-      );
+    );
   }
 }

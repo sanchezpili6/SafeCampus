@@ -15,6 +15,7 @@ class _pedirAyudaState extends State<pedirAyuda>{
   @override
   Widget build(BuildContext context) {
       return Scaffold(
+        backgroundColor: kContraste1,
         drawer: Hamburguesita(),
         appBar: AppBar(
             backgroundColor: kPrimaryColor,
