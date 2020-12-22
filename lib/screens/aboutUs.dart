@@ -8,6 +8,7 @@ class aboutUs extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: kContraste1,
       drawer: Hamburguesita(),
       appBar: AppBar(
           backgroundColor: kPrimaryColor,
@@ -37,7 +38,7 @@ class aboutUs extends StatelessWidget{
               Text(
                 'Somos una red de apoyo para aquellas personas que no tienen la seguridad y la confianza de abrirse para denunciar a sus agresores y romper su silencio, somos ese primer contacto de seguridad y atención, acompañándolas en su camino de reconstrucción en un ambiente digno y seguro.',
                 style: GoogleFonts.montserrat(
-                    color: kTitulos,
+                    color: Colors.black,
                     fontWeight: FontWeight.w300,
                     fontSize: 15
                 ),
@@ -46,7 +47,7 @@ class aboutUs extends StatelessWidget{
               Text(
                 'Nuestra comunidad tiene como objetivo enfatizar el sentido de sororidad y empoderamiento entre mujeres creando espacios de confianza, alianza y fuerza para que ellas puedan perder el miedo a levantar su voz. ',
                 style: GoogleFonts.montserrat(
-                    color: kTitulos,
+                    color: Colors.black,
                     fontWeight: FontWeight.w300,
                     fontSize: 15
                 ),
@@ -64,7 +65,7 @@ class aboutUs extends StatelessWidget{
               Text(
                 '¡Es muy fácil! Registrate en la plataforma, contesta las preguntas filtro',
                 style: GoogleFonts.montserrat(
-                    color: kTitulos,
+                    color: Colors.black,
                     fontWeight: FontWeight.w300,
                     fontSize: 15
                 ),
@@ -82,7 +83,7 @@ class aboutUs extends StatelessWidget{
               Text(
                 'Aunque no ofrecemos directamente asistencia legal ni profesional, ofrecemos un networking en la que otras mujeres te podrán contactar para poder aconsejarte, acompañarte en todo tu proceso y dirigirte con profesionales apropiados. Si es que no te sientes cómoda teniendo esta interacción directamente, puedes identificarte anónimamente para pedir este apoyo.',
                 style: GoogleFonts.montserrat(
-                    color: kTitulos,
+                    color: Colors.black,
                     fontWeight: FontWeight.w300,
                     fontSize: 15
                 ),
