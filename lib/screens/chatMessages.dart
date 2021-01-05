@@ -3,6 +3,7 @@ import 'package:safecampus/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:safecampus/hamburguesita.dart';
+import 'package:safecampus/screens/helperProfile.dart';
 
 class ChatMessages extends StatelessWidget {
   @override
@@ -52,7 +53,15 @@ class ChatMessages extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                print("Renglon !");
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder:
+                            (context) {
+                          return HelperProfile();
+                        }
+                    )
+                );
               },
             ),
             Center(
