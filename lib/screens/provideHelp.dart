@@ -3,6 +3,7 @@ import 'package:safecampus/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:safecampus/hamburguesita.dart';
+import 'package:safecampus/screens/aboutUs.dart';
 
 class ProvideHelp extends StatelessWidget {
   @override
@@ -118,7 +119,17 @@ class ProvideHelp extends StatelessWidget {
                         fontSize: 16,
                       ),
                     ),
-                    onPressed: () {})
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder:
+                                  (context) {
+                                return aboutUs();
+                              }
+                          )
+                      );
+                    })
               ],
             ),
           ],
